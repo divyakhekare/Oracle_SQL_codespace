@@ -8,7 +8,7 @@ cells:
       b. color color_b
       FROM
       palette_a a
-      NNER JOIN palette_b b ON a.color = b. color;
+      INNER JOIN palette_b b ON a.color = b. color;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -123,7 +123,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-         name AS customer name,
+         name AS customers_name,
          order_id,
          order_date,
          item_id,
@@ -132,7 +132,7 @@ cells:
       FROM
          orders
       INNER JOIN order_items USING(order_id)
-      IVIER JOIN customers USING(customer_id)
+      INNER JOIN customers USING(customer_id)
       ORDER BY
             order_date DESC,
             order_id DESC,
@@ -141,7 +141,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-          name AS custcmer_name,
+          name AS customer_name,
           order_id,
           order_date,
           item_id,
@@ -152,7 +152,7 @@ cells:
           orders
       INNER JOIN order_items
                  USING(order_id)
-      INNER JOIN custcmers
+      INNER JOIN customers
                  USING(customer_id)
       INNER JOIN products
                  USING(product_id)
@@ -164,10 +164,10 @@ cells:
   - kind: 2
     value: |
       SELECT
-          coltnn_list
+          column_list
        FROM
           T1
-      LEFT JOIN T2 ON
+      LEFT JOIN T1 ON
             join_predicate;
     languageId: oracle-sql
   - kind: 2
@@ -179,7 +179,7 @@ cells:
           last_name
       FROM
          orders
-      LEFT JOIN = employees ON employee_id salesman_id
+      LEFT JOIN  employees ON employee_id , salesman_id
       ORDER BY
       order_date DESC;
     languageId: oracle-sql
@@ -244,7 +244,7 @@ cells:
       FROM
           orders
       LEFT JOIN employees ON
-           enployee_id = salesman_id
+           employee_id = salesman_id
       WHERE
           order_id = 58;
     languageId: oracle-sql
@@ -264,7 +264,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-         coltnn_list
+         column_list
       FROM
          T1
       RIGHT OUTER JOIN T2 ON
@@ -359,7 +359,7 @@ cells:
       FROM
          T t1
       INNER JOIN T t2 ON
-      j  oin_predicate ;
+         join_predicate ;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -386,7 +386,7 @@ cells:
       e1.employee_id> e2.employee_id
       AND el.hire_date = e2.hire_date
       ORDER BY
-      e1.hire_date DESC'
+      e1.hire_date DESC,
       employee1,
       employee2;
     languageId: oracle-sql
