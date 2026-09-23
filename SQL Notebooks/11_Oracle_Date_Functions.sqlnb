@@ -49,24 +49,36 @@ cells:
       dual;
     languageId: oracle-sql
   - kind: 2
-    value: |
+    value: >
       SELECT
-      EXTRACT( YEAR FROY TO_DATE('31-Dec-1999 15:30:20', 'Do-Mon-YYYY HH24:MI:SS')) YEAR
+
+      EXTRACT( YEAR FROM TO_DATE('31-Dec-1999 15:30:20', 'DD-Mon-YYYY
+      HH24:MI:SS')) YEAR
+
       FROM
+
       DUAL;
     languageId: oracle-sql
   - kind: 2
-    value: |
+    value: >
       SELECT
-      EXTRACT( MONTH FROM TO_DATE('31-Dec-1999 15:30:20', 'DD-Mon_YYYY HH24:MI:SS')) MONTH
+
+      EXTRACT( MONTH FROM TO_DATE('31-Dec-1999 15:30:20', 'DD-Mon_YYYY
+      HH24:MI:SS')) MONTH
+
       FROM
+
       DUAL;
     languageId: oracle-sql
   - kind: 2
-    value: |
+    value: >
       SELECT
-      EXTRACT( DAY FROM TO_DATE('31-Dec-1999 15:30:20', 'DO-MON-YYYY HH24:MI:SS')) DAY
+
+      EXTRACT( DAY FROM TO_DATE('31-Dec-1999 15:30:20', 'DD-Mon-YYYY
+      HH24:MI:SS')) DAY
+
       FROM
+
       DUAL;
     languageId: oracle-sql
   - kind: 2
@@ -74,7 +86,7 @@ cells:
       SELECT
       TO_CHAR(SYSDATE,'HH24') hour,
       TO_CHAR(SYSDATE,'MI') minute,
-      TO_CHAR(SYSDATE,'SS') second,
+      TO_CHAR(SYSDATE,'SS') second
       FROM
       DUAL;
     languageId: oracle-sql
@@ -152,7 +164,7 @@ cells:
     value: |
       SELECT
       EXTRACT( SECOND FROM TIMESTAMP '1999-12-31 23:59:59.10')
-      FROY
+      FROM
       dual;
     languageId: oracle-sql
   - kind: 2
@@ -181,7 +193,7 @@ cells:
       SELECT
       EXTRACT(YEAR FROM TO_DATE(:input_date,'yyyymmdd')) year,
       EXTRACT(MNOTH FROM TO_DATE(:input_date,'yyyymmdd')) month,
-      EXTRACT(DAY FROM TO_DATE(:input_date,'yyyymmdd')) day,
+      EXTRACT(DAY FROM TO_DATE(:input_date,'yyyymmdd')) day
       FROM
       dual;
     languageId: oracle-sql
@@ -217,9 +229,9 @@ cells:
       );
     languageId: oracle-sql
   - kind: 2
-    value: |
-      INSERT INTO members( first_name, last_nane, joined_date)
-      VALUES( 'Laureen' , 'Davidson' , 'Feb 01 2017' , 'Mon DD YYYY'));
+    value: |-
+      INSERT INTO members(first_name, last_name, joined_date)
+      VALUES('Laureen' ,'Davidson' , TO_DATE('Feb 01 2017', 'Mon DD YYYY'));
     languageId: oracle-sql
   - kind: 2
     value: |
