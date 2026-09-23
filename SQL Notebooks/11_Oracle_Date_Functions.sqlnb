@@ -214,7 +214,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-      TO_DATE('5 Jan 2017', 'DD MON YYY')
+      TO_DATE('05 Jan 2017','DD MON YYYY')
       FROM
       dual;
     languageId: oracle-sql
@@ -236,7 +236,7 @@ cells:
   - kind: 2
     value: |
       INSERT INTO members(first_name, last_name, joined_date)
-      VALUES( 'Thomas' . 'Phelps', TO_DATE('15 March 2017' , 'DD Month YYYY'));
+      VALUES( 'Thomas' ,'Phelps', TO_DATE('15 March 2017' , 'DD Month YYYY'));
     languageId: oracle-sql
   - kind: 2
     value: |
